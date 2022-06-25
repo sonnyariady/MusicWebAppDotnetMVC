@@ -1,0 +1,209 @@
+﻿@{
+    ViewBag.Title = "Music";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="@Url.Content("~/Content/ui-framework/css/style.css")" type="text/css" />
+    <link rel="stylesheet" href=@Url.Content("~/Content/ui-framework/js/datatables/datatables.css") type="text/css" />
+@*<link rel="stylesheet" href=@Url.Content("~/Content/bootstrap.css") type="text/css" />
+<link rel="stylesheet" href=@Url.Content("~/Content/bootstrap-grid.css") type="text/css" />*@
+}
+
+@{
+    Html.RenderPartial("ModalDialog");
+}
+
+<section>
+    <a title='Create' href="@Url.Action("Create")" class="btn btn-info" >Create</a>
+
+
+
+    <div class="panel" id="datatable">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <div class="table-responsive">
+                            <table id="DSFUser-table-list" class="table table-striped m-b-none display nowrap row-border">
+                                <thead>
+                                    <tr>
+                                        <th>Album Name</th>
+                                        <th>Artist Name</th>
+                                        <th>Date Release</th>
+                                        <th>Sample Audio</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="dvModalPlay"></div>
+
+
+    @section Scripts{
+        <script src="@Url.Content("~/Content/ui-framework/js/datepicker/bootstrap-datepicker.js")"></script>
+        <script src="@Url.Content("~/Content/ui-framework/js/bootstrap.js")"></script>
+       @* <script src="@Url.Content("~/Content/js/jquery-3.4.1.min.js")"></script>*@
+        <!-- Bootstrap -->
+        <script src="@Url.Content("~/Content/ui-framework/js/datatables/jquery.dataTables.min.js")"></script>
+        <script>
+
+            $(document).ready(function () {
+
+
+                $("#DSFUser-table-list").each(function () {
+                    DSFUserTable = $(this).dataTable({
+                        "bServerSide": true,
+                        "bProcessing": true,
+                        "aaSorting": [[15, "asc"]],
+                        "sScrollXInner": "200%",
+                        "sAjaxSource": "@Url.Action("MusicAjaxHandler", "Music")",
+                        "sDom": "<'row'<'col-sm-6'l><'col-sm-6'>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+                       // "sPaginationType": "full_numbers",
+                        "bPaginate": false,
+                        "bAutoWidth": false,
+                        "bSearchable": false,
+                        "bFilter": false,
+                        "aoColumns": [
+                            {
+                                "mData": "AlbumName", "bSearchable": false, "bSortable": false, "fnRender": function (oObj) {
+                                    var namaalbum = oObj.aData["AlbumName"];
+                                    var imageurl = oObj.aData["ImageURL"];
+                                    var htmltext = "";
+                                    htmltext = "<img src='" + imageurl + "'/>" + namaalbum;
+                                    return htmltext;
+                                }
+                            },
+                            { "mData": "ArtistName", "bSearchable": false, "bSortable": false },
+                            { "mData": "ReleaseDateStr", "bSearchable": false, "bSortable": false },
+                            {
+                                "mData": "SampleURL",
+                                "bSearchable": false,
+                                "bSortable": false,
+                                "fnRender": function (oObj) {
+                                    var Id = oObj.aData["ArtistID"];
+
+                                    var htmlStatus = "";
+                                    htmlStatus = "";
+                                    htmlStatus = htmlStatus + "<button class='btn btn-white' type='button' onclick='LoadArtist(" + Id + ");'>" + "<img src='@Url.Content("../Content/playicon.jpg")' width='50px' height='50px'>" + "</button>";
+                                    return htmlStatus;
+                                }
+                            },
+                            { "mData": "Price", "bSearchable": false, "bSortable": false },
+                            {
+                                "mData": "ArtistID",
+                                "bSearchable": false,
+                                "bSortable": false,
+                                "fnRender": function (oObj) {
+                                    var Id = oObj.aData["ArtistID"];
+                                    var htmlStatus = "";
+
+                                    htmlStatus = "<a title='Edit' href='@Url.Action("Edit", "Music")/" + Id + "' class='btn btn-info' style='border-radius: .25em;'>Edit</i></a>";
+                                    htmlStatus = htmlStatus + "<a title='Delete' href='@Url.Action("Delete", "Music")/" + Id + "' class='btn btn-danger' style='border-radius: .25em;' onclick='return confirmDelete();'>Delete</a>";
+
+
+
+                                    return htmlStatus;
+                                }
+                            }
+                        ],
+                        "aoColumnDefs": [
+                            { "sWidth": "10%", "aTargets": [0] },
+                            { "sWidth": "15%", "aTargets": [1] },
+                            { "sWidth": "15%", "aTargets": [2] },
+                            { "sWidth": "15%", "aTargets": [3] },
+                            { "sWidth": "15%", "aTargets": [4] },
+                            { "sWidth": "10%", "aTargets": [5] }
+                        ],
+                        "fnServerData": function (sSource, aoData, fnCallback) {
+                            $.ajax({
+                                "dataType": 'json',
+                                "type": "POST",
+                                "url": sSource,
+                                "data": aoData,
+                                "success": fnCallback,
+                                "timeout": 0,
+                                "error": handleAjaxError
+                            });
+                        }
+                    });
+                });
+
+                //handling Error
+                function handleAjaxError(textStatus) {
+                    if (textStatus === 'timeout') {
+                        bootstrap_alert.error("Timeout", "The server took too long to send the data.");
+                    }
+                    else {
+                        bootstrap_alert.error("Connection problem", "An error occurred on the server. Please try again in a few minute or contact your administrator.");
+                    }
+                }
+
+                // Searching
+                $('#btnSearch')
+                    .on('click',
+                        function (e) {
+                            e.preventDefault();
+                            $('#DSFUser-table-list').dataTable().fnDraw(); // Manually redraw the table after filtering
+                        });
+
+                bootstrap_alert = function () { }
+                bootstrap_alert.success = function (header, message) {
+                    $('#alert_placeholder').html('<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><b>' + header + '!</b> ' + message + '</div>');
+                }
+                bootstrap_alert.error = function (header, message) {
+                    $('#alert_placeholder').html('<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><b>' + header + '!</b> ' + message + '</div>');
+                }
+
+
+                @*$('#btnAddNew')
+                   .on('click',
+                       function (e) {
+                           e.preventDefault();
+                           window.location.href = '@Url.Action("Create")';
+                       });*@
+
+          
+                $('#playmodal').on('hide.bs.modal', function () { //Change #myModal with your modal id
+                    $('audio').each(function () {
+                        this.pause(); // Stop playing
+                        this.currentTime = 0; // Reset time
+                    });
+                })
+
+            });
+
+            function LoadArtist(Id) {
+                var url = '@Url.Action("ViewPlay")' + "/" + Id
+                var options = {
+                    "backdrop": "static",
+                    keyboard: true
+                };
+
+                //alert(url);
+
+                $.get(url, function (data) {
+                    $('.modal-body').html(data);
+                    $('#playmodal').modal(options);
+                    $('#playmodal').modal('show');
+                });
+
+            }
+
+            function confirmDelete()
+            {
+                var result = confirm("Are you sure to delete this data?");
+                return result;
+            }
+
+
+        </script>
+    }

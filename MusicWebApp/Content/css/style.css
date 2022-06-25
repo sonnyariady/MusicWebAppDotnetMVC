@@ -1,0 +1,655 @@
+﻿.bg-light.dker,
+.bg-light .dker {
+    /*background-color: #a1a1a1;*/
+    background-color: #fff;
+    background-image: url('../img/bg_header.png');
+    background-repeat: no-repeat;
+}
+
+.asterix {
+    color: #cd2122;
+}
+
+.mandatory {
+    background-color: #fff;
+    border-color: #cd2122;
+}
+
+#showmenu {
+    cursor: pointer;
+}
+
+.field-validation-error {
+    color: red;
+    font-size: 11px;
+}
+
+.input-validation-error {
+    background: #fff;
+}
+
+.allownumericonly,
+.allownumericwithdecimal,
+.currenciesOnly,
+.decimalsOnly,
+.numbersOnly {
+    text-align: right;
+}
+
+.parsley-error-list {
+    color: red;
+}
+
+ul.steps li.islink:hover {
+    color: #fb6b5b;
+    text-decoration: underline;
+}
+
+.datepicker-input {
+    cursor: pointer !important;
+}
+
+.modal-dialog .panel .table-striped > tbody > tr:nth-child(odd):hover > td,
+.modal-dialog .panel .table-striped > tbody > tr:nth-child(even):hover > td {
+    background: #fb6b5b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-dialog .modal-header {
+    border-bottom: none;
+}
+
+.modal-dialog .modal-footer {
+    border-top: none;
+    margin-top: 0px;
+}
+
+.label-panel {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.form-control.lbl {
+    background: none;
+    border: none;
+}
+
+.input-group-addon.lbl {
+    background: none;
+    border: none;
+}
+
+.table-input .input-group-addon {
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 10px 10px;
+}
+
+/* Modified By Asep Edi Kurniawan */
+
+p.legend {
+    margin: 10px;
+}
+
+
+.btn {
+    border-radius: 0px;
+}
+
+.form-control, .input-group-btn .btn {
+    font-size: 12px;
+    height: 30px;
+    border-radius: 0px;
+    color: #000000;
+}
+
+    .form-control option {
+        font-size: 12px;
+    }
+
+.form-group {
+    margin: 5px 0;
+}
+
+    .form-group label {
+        font-size: 11px;
+    }
+
+.panel {
+    margin-bottom: 7px;
+}
+
+.table-calc {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.table-input .form-control {
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    height: 35px;
+}
+
+    .table-input .form-control:focus {
+        border-right: none;
+    }
+
+.table-input td:last-child {
+    border-right: none;
+}
+
+.table-input td {
+    padding: 0 !important;
+    border-right: 1px solid #e1e1e1;
+}
+
+.table-input .form-control-static {
+    padding: 6px 15px;
+}
+
+.table-input .input-title {
+    border-right: 1px solid #e1e1e1;
+}
+
+.table-input td.font-bold {
+    padding: 7px 12px !important;
+}
+
+.no-hover-bg:hover {
+    background: none !important;
+    color: #777 !important;
+}
+
+header p.navbar-left {
+    font-weight: bold;
+}
+
+.header p.navbar-left {
+    font-size: 14px;
+}
+
+.header p.navbar-left {
+    margin: 5px 0px;
+    margin-top: 7px;
+    /*color: #fff;*/
+    color: #000;
+}
+
+
+.label-panel {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.datatables_action {
+    white-space: nowrap;
+}
+
+.WrapTdValue {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+input.datepicker-input[readonly] {
+    background-color: #fff !important;
+    /* any other styles */
+}
+
+@media print {
+
+    .income-projection td.font-bold {
+        padding-right: 100px !important;
+    }
+
+    .each {
+        margin-left: 20px;
+    }
+
+    .multipage table {
+        margin: 2px !important;
+    }
+
+    .width610 {
+        width: 400px !important;
+    }
+
+    .check-box {
+        width: 8px;
+        margin: 0 !important;
+    }
+
+    body {
+        font-size: 7px !important;
+    }
+
+    img {
+        width: 150px !important;
+    }
+
+    .form-control {
+        border: none;
+        border-radius: 0px;
+        border-bottom: 1px solid #eee;
+        font-size: 9px;
+        padding-left: 0px;
+    }
+
+    .table,
+    .table td,
+    .table tr,
+    .table th {
+        border: none !important;
+    }
+
+        .table td {
+            padding: 2px !important;
+        }
+
+    .multipage .table td {
+        padding: 0px !important;
+    }
+}
+
+.modalloading {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 255, 255, 255, .8 ) url("../img/loading.gif") 50% 50% no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+    /* Anytime the body has the loading class, our
+   modal element will be visible */
+    body.loading .modalloading {
+        display: block;
+    }
+
+.radioPositionCenter {
+    display: block;
+    margin-left: 60px;
+    margin-top: 6px;
+}
+
+/*datatable header grid*/
+.header-grid-very-short {
+    width: 50px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-to-short {
+    width: 40px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-short {
+    width: 100px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-pre-long {
+    width: 130px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-medium {
+    width: 150px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-long {
+    width: 270px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-very-long {
+    width: 300px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-date {
+    width: 90px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-name {
+    width: 200px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-action {
+    width: 100px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-status {
+    width: 80px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.header-grid-identity {
+    width: 150px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+/*End datatable header grid*/
+
+/*Start customize table container*/
+#table-list_wrapper {
+    overflow: auto;
+    height: 375px;
+}
+
+#outstanding45-list_wrapper {
+    overflow: auto;
+    height: 375px;
+}
+
+#outstanding20-list_wrapper {
+    overflow: auto;
+    height: 375px;
+}
+
+#outstanding3-list_wrapper {
+    overflow: auto;
+    height: 375px;
+}
+
+#actual-list_wrapper {
+    overflow: auto;
+    height: 375px;
+}
+/*new label for revise*/
+.label-revise {
+    background-color: #E6AAE1;
+}
+
+
+.tablewrap {
+    width: 100%;
+    table-layout: fixed;
+}
+
+    .tablewrap td {
+        word-wrap: break-word;
+    }
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #fff;
+}
+
+/*Dipolink*/
+.more-faq {
+    text-decoration: none;
+    float: right;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    .more-faq:hover {
+        text-decoration: none;
+        color: #FFF;
+    }
+
+.read-more {
+    color: #121212;
+    background-color: #F2F2F2;
+    padding: 1px 4px;
+    display: block;
+    width: 77px;
+    margin-top: 5px;
+    box-shadow: 0px 0px 3px #000;
+    font-family: LeagueGothic, sans-serif;
+    text-transform: uppercase;
+    font-size: 11px;
+    border-radius: 2px;
+}
+
+    .read-more:hover {
+        background-color: #ff6666;
+        color: #121212;
+        font-weight: bold;
+    }
+
+.news-promo {
+    background: #A8171B !important;
+    color: #FFF;
+    padding: 5px 10px;
+    height: 160px;
+}
+
+    .news-promo h4 {
+        color: #FFF;
+        font-size: 18px;
+    }
+
+#news-det {
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+    color: #666;
+}
+
+    #news-det h1 {
+        margin: 0px;
+        font-size: 24px;
+        color: #A8171B;
+        margin-bottom: 0px;
+    }
+
+    #news-det h2 {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    #news-det p {
+        font-size: 16px;
+        color: #666;
+        margin: 20px 0px;
+        text-align: justify;
+    }
+
+img {
+    max-width: 100%;
+}
+
+.main-content-page .col-sm-6 {
+    padding: 0px;
+}
+
+.main-content-page {
+    padding: 0px;
+}
+
+    .main-content-page .td-triangle-right {
+        display: none;
+    }
+
+.business-page {
+    border-bottom: 1px solid #A8171B;
+}
+
+.main-box {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.top-footer {
+    font-size: 12px;
+}
+
+    .top-footer ul {
+        padding: 0px;
+        list-style: none;
+    }
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* styles for Dashboard*/
+.table a.fpplink {
+    color: #cd2122;
+}
+
+    .table a.fpplink:hover {
+        color: #333;
+    }
+
+.tooltip-dipo {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltip-dipo .tooltiptext-dipo {
+        visibility: hidden;
+        width: 180px;
+        height: auto;
+        background-color: white;
+        border-width: 1px 1px 1px 1px;
+        border-style: solid;
+        color: black;
+        text-align: left !important;
+        font-size: 14px;
+        font-family: Arial;
+        border-radius: 2px;
+        padding: 3px 0 0px 0px;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+    }
+
+        .tooltip-dipo .tooltiptext-dipo::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 7px;
+            border-style: solid;
+            border-color: transparent black transparent transparent;
+        }
+
+    .tooltip-dipo:hover .tooltiptext-dipo {
+        visibility: visible;
+    }
+
+.tooltip-dipo-info-right {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltip-dipo-info-right .tooltiptext-dipo-info-right {
+        visibility: hidden;
+        width: 220px;
+        height: auto;
+        background-color: white;
+        border-width: 1px 1px 1px 1px;
+        border-style: solid;
+        color: black;
+        text-align: left !important;
+        font-size: 14px;
+        font-family: Arial;
+        border-radius: 2px;
+        padding: 0px 0 0px 0px;
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        left: 110%;
+        margin-left: 300%;
+    }
+
+        .tooltip-dipo-info-right .tooltiptext-dipo-info-right::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 7px;
+            border-style: solid;
+            border-color: transparent black transparent transparent;
+        }
+
+    .tooltip-dipo-info-right:hover .tooltiptext-dipo-info-right {
+        visibility: visible;
+    }
+
+.tooltip-dipo-info-left {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltip-dipo-info-left .tooltiptext-dipo-info-left {
+        visibility: hidden;
+        width: 270px;
+        height: auto;
+        background-color: white;
+        border-width: 1px 1px 1px 1px;
+        border-style: solid;
+        color: black;
+        text-align: left !important;
+        font-size: 14px;
+        font-family: Arial;
+        border-radius: 2px;
+        padding: 0px 0 0px 0px;
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        right: 110%;
+        margin-right: 300%;
+    }
+
+        .tooltip-dipo-info-left .tooltiptext-dipo-info-left::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 100%;
+            margin-top: -5px;
+            border-width: 7px;
+            border-style: solid;
+            border-color: transparent transparent transparent black;
+        }
+
+    .tooltip-dipo-info-left:hover .tooltiptext-dipo-info-left {
+        visibility: visible;
+    }
+/*end of styles for dashboard*/
+
+.modal-header {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}

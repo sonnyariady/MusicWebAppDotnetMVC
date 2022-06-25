@@ -1,0 +1,13 @@
+﻿@model MusicWebApp.Artist
+
+<b>Artist Name :</b> @Model.ArtistName<br />
+<b>Album Name :</b> @Model.AlbumName<br /><br />
+<img src="@Model.ImageURL" height="100px" width="100px" /><br />
+
+
+<audio id="audioartist" controls autoplay>
+    <source src="@Model.SampleURL" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+

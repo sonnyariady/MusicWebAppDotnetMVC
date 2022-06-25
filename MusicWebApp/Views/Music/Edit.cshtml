@@ -1,0 +1,83 @@
+﻿@model MusicWebApp.Artist
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Artist</legend>
+    
+            @Html.HiddenFor(model => model.ArtistID)
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ArtistName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ArtistName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ArtistName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.AlbumName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.AlbumName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AlbumName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ImageURL)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ImageURL, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ImageURL)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ReleaseDate)
+            </div>
+            <div class="editor-field">
+                <div class="input-group date">
+                    @Html.TextBoxFor(model => model.ReleaseDate, Model.ReleaseDate.ToString("MM/dd/yyyy"), new { @class = "form-control datepicker-input", @id = "ReleaseDate" })
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+
+                @Html.ValidationMessageFor(model => model.ReleaseDate)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Price)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Price, new { @class = "form-control only-numeric" })
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SampleURL)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SampleURL, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SampleURL)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

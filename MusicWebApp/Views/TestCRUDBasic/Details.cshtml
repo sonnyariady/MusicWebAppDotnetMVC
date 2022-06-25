@@ -1,0 +1,57 @@
+﻿@model MusicWebApp.Artist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Artist</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArtistName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArtistName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AlbumName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AlbumName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageURL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageURL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReleaseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SampleURL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SampleURL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ArtistID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

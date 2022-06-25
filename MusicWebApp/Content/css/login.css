@@ -1,0 +1,109 @@
+﻿#dsf-role-branch-list > tbody > tr:hover > td,
+#dsf-role-branch-list > tbody > tr:hover > th {
+    background-color: #ff2728;
+    cursor: pointer;
+}
+
+#Username {
+    background-color: transparent;
+    border-top: 0px solid;
+    border-left: 0px solid;
+    border-right: 0px solid;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+#Password {
+    background-color: transparent;
+    border-top: 0px solid;
+    border-left: 0px solid;
+    border-right: 0px solid;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+#footer {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    left: -2px;
+    bottom: 1px;
+    right: 0px;
+    position: fixed;
+    border-top: solid 2px #bf1717!important;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #ffffff;
+}
+
+#ojk {
+    background: transparent;
+    color: #fff;
+    opacity: 0.7;
+}
+
+    #ojk:hover {
+        background: transparent;
+        color: #fff;
+        opacity: 1;
+    }
+
+#sikapi {
+    opacity: 0.7;
+}
+
+#sikapi:hover {
+    opacity: 1;
+}
+
+.logo-dipofinance {
+    height: 32px;
+}
+
+.div-logo-dipofinance {
+    padding-top: 20px; z-index: 1000;
+}
+
+.test-qa-label {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    padding-right: 20px;
+}
+
+.login-panel {
+    border: none; box-shadow: none;-webkit-box-shadow: none;
+}
+
+.header-container {
+    text-align: center; padding-bottom: 10px; padding-top: 10px;
+}
+
+.div-copyright {
+    text-align: left; padding-bottom: 7px;
+}
+
+.div-copyright-p {
+    font-size : 10px;
+}
+
+.div-copyright a {
+    color: blue;
+}
+
+#disclaimerModal .modal-body {
+    height: 400px;
+    overflow: auto;
+}
+
+#content {
+    margin-bottom: 70px;
+}
+
+.login-text {
+    text-transform:uppercase !important;
+}

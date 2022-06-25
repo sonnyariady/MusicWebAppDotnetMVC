@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Not Authorized";
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
+}
+
+
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+    <div style="text-align: center; padding-top: 50px;">
+        <h2>Anda tidak memiliki izin untuk melihat halaman ini</h2>
+    </div>
+    <div style="text-align: center; padding-top: 10px;">
+        @Html.ActionLink("Kembali ke Login", "LogOff", "Account", null, new { @class = "btn btn-primary" })
+    </div>
+</section>
